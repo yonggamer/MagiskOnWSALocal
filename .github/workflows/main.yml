@@ -1,0 +1,17 @@
+name: Run Script Manually
+
+on:
+  workflow_dispatch: # This allows the workflow to be manually triggered
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Change directory and run script
+        run: |
+          cd MagiskOnWSALocal
+          ./scripts/run.sh
